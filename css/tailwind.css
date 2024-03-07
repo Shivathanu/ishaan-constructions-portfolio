@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,9 +8,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Inter;
 }
+
 
 @layer utilities {
   .btn_white { 
@@ -20,6 +23,15 @@ body {
   }
   .btn_white_text  { 
     @apply  border-white bg-white px-8 py-3 text-gray-90
+  }
+  .btn_transparent_yellow {
+    @apply  border-yellow-500 bg-transparent px-8 py-5 text-white hover:bg-yellow-500 hover:text-black
+  }
+  .btn_white_yellow {
+    @apply  border-yellow-500 bg-transparent px-8 py-5 text-white hover:bg-yellow-500 hover:text-black
+  }
+  .btn_yellow {
+    @apply  border-black bg-yellow-500 px-8 py-5 text-black hover:bg-yellow-500 hover:text-black
   }
   .btn_green  { 
     @apply  border-green-50 bg-green-50 px-8 py-5 text-white
@@ -32,11 +44,11 @@ body {
   }
   
   .max-container {
-    @apply mx-auto max-w-[1440px];
+    @apply mx-auto max-w-[1920px];
   }
 
   .padding-container {
-    @apply px-6 lg:px-20 3xl:px-0;
+    @apply px-6 lg:px-20 2xl:px-40;
   }
 
   .flexCenter {
@@ -49,6 +61,10 @@ body {
 
   .flexStart {
     @apply flex items-center justify-start;
+  }
+
+  .flexAround {
+    @apply flex items-center justify-around;
   }
 
   .flexEnd {
@@ -126,7 +142,7 @@ body {
 
   /* Hero */
   .hero-map {
-    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
+    background-image: url('../public/static/images/construction-img.jpg')
   }
 
   /* Camp */
@@ -154,4 +170,37 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.data-footnote-backref {
+  @apply no-underline;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
+
+.katex-display {
+  overflow: auto hidden;
 }

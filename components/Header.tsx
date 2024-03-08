@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Button from './Button'
 import { useEffect, useState } from 'react'
 import { FaPenAlt } from "react-icons/fa";
+import MobileNav from './MobileNav';
 
 export default function Header() {
     const [color, setColor] = useState('transparent')
@@ -55,6 +56,7 @@ export default function Header() {
                     reactIcon={FaPenAlt}
                 />
             </div>
+            <MobileNav />
         </nav>
     </>
   )

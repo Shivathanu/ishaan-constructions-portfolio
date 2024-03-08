@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: 'Ishaan Constructions',
-  author: 'Shivathanu',
+  author: 'Gopirajan',
   headerTitle: 'Ishaan Constructions',
   description: 'A portfolio for Ishaan Constructions',
   language: 'en-us',

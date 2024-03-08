@@ -28,20 +28,21 @@ const MobileNav = () => {
           className={
             navShow
               ? 'lg:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
-              : 'lg:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
+              : 'lg:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex gap-5 justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
           }
         >
           <ul>
           {headerNavLinks.map((link) => (
-                    <Link 
-                        href={link.href} 
-                        key={link.title}
-                        className={`regular-18 text-white flexCenter cursor-pointer pb-1.5
-                        transition-all hover:font-bold hover:text-white-500 hover:border-b-10 hover:border-white-10`}
-                    >
-                        {link.title}
-                    </Link>
-                ))}
+            <Link 
+                onClick={onToggleNav}
+                href={link.href} 
+                key={link.title}
+                className={`regular-20 text-white flexCenter cursor-pointer pb-1.5 p-4
+                transition-all hover:font-bold hover:text-white-500 hover:border-b-10 hover:border-white-10`}
+            >
+                {link.title}
+            </Link>
+          ))}
           </ul>
         </div>
     </>

@@ -6,7 +6,6 @@ import siteMetadata from '@/data/siteMetadata'
 
 export default function Comments({ slug }: { slug: string }) {
   const [loadComments, setLoadComments] = useState(false)
-  console.log('loadComments:', loadComments);
   return (
     <>
       {!loadComments && <button onClick={() => setLoadComments(true)}>Load Comments</button>}

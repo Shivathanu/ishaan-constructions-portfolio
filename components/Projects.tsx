@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { SliderData } from '../data/sliderData';
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 
-const Slider = ({ slides }) => {
+const Projects = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
@@ -22,7 +22,7 @@ const Slider = ({ slides }) => {
 
   return (
     <div id='gallery' className='max-w-[1240px] mx-auto'>
-      <h1 className='text-2xl font-bold text-center p-4'>Projects</h1>
+      <h1 className='text-3xl font-bold text-center p-4'>Projects</h1>
       <div className='relative flex justify-center p-4'>
 
       {SliderData.map((slide, index) => {
@@ -61,4 +61,4 @@ const Slider = ({ slides }) => {
   );
 };
 
-export default Slider;
+export default Projects;

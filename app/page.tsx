@@ -1,12 +1,14 @@
 import { SliderData } from '@/data/sliderData'
-import Slider from '../components/Slider'
-import Main from './Main'
+import Projects from '../components/Projects'
+import Main from './main'
+import Services from './services'
 
 export default async function Page() {
   return (
     <>
       <Main/>
-      <Slider slides={SliderData} />
+      <Projects slides={SliderData} />
+      <Services />
     </>
   )
 }

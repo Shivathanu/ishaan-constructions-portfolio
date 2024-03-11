@@ -5,9 +5,8 @@ import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 
-const MobileNav = () => {
+const MobileNav = ({ menuColor }) => {
   const [navShow, setNavShow] = useState(false)
-  const [textColor, setTextColor] = useState('white');
 
   const onToggleNav = () => {
     setNavShow(!navShow)
@@ -18,9 +17,9 @@ const MobileNav = () => {
       {/* Mobile Button */}
       <div onClick={onToggleNav} className='block lg:hidden z-10'>
           {navShow ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineClose size={20} style={{ color: menuColor }} />
           ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineMenu size={20} style={{ color: menuColor }} />
           )}
         </div>
         {/* Mobile Menu */}

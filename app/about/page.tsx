@@ -11,7 +11,7 @@ export default function Page() {
         occupation: 'Civil Contractor',
         company: 'Ishaan Constructions',
         email: 'sathi1967@gmail.com',
-        linkedin: 'https://www.linkedin.com/in/sathi-azimuth-2a3b4b5a/',
+        linkedin: 'http://linkedin.com/in/sivagopi-rajan-18095956',
         title: 'About',
         description: 'About page',
         image: '/static/images/profile.jpg',

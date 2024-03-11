@@ -12,6 +12,7 @@ export default function Header() {
     const [textColor, setTextColor] = useState('white')
     const [linkColor, setLinkColor] = useState('yellow')
     const [btnColor, setBtnColor] = useState('btn_transparent_yellow')
+    const [menuColor, setMenuColor] = useState('white')
 
     useEffect(() => {
         const changeColor = () => {
@@ -20,11 +21,13 @@ export default function Header() {
             setTextColor('black');
             setLinkColor('black');
             setBtnColor('btn_yellow');
+            setMenuColor('black');
           } else {
             setColor('transparent');
             setTextColor('white');
             setLinkColor('yellow');
             setBtnColor('btn_transparent_yellow');
+            setMenuColor('white');
           }
         };
         window.addEventListener('scroll', changeColor);
@@ -32,9 +35,9 @@ export default function Header() {
 
   return (
     <>
-        <nav style={{ backgroundColor: `${color}` }} className='fixed left-0 top-0 w-full flexBetween max-container padding-container z-10 mx-25 py-5 ease-in duration-300'>
+        <nav style={{ backgroundColor: `${color}` }} className='fixed left-0 top-0 w-full flexBetween max-container padding-container z-10 mx-25 py-1 ease-in duration-300'>
             <Link href='/'>
-                <Image style={{ color: `${textColor}` }} src='/hilink-logo.svg' alt='logo' width={74} height={30} />
+                <Image style={{ color: `${textColor}` }} src='/static/favicons/logo.jpg' alt='logo' width={74} height={30} />
             </Link>
             <ul className='hidden h-full gap-12 sm:flex'>
                 {headerNavLinks.map((link) => (
@@ -54,9 +57,10 @@ export default function Header() {
                     title='Get a Quote'
                     variant={btnColor}
                     reactIcon={FaPenAlt}
+                    onClick={() => (window.location.href = '/contact')}
                 />
             </div>
-            <MobileNav />
+            <MobileNav menuColor={menuColor} />
         </nav>
     </>
   )

@@ -59,9 +59,6 @@ const securityHeaders = [
 module.exports = () => {
   const plugins = [withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
-    basePath: "/ishaan-constructions-portfolio",
-    assetPrefix: "/ishaan-constructions-portfolio/",
-    output: "export",
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {

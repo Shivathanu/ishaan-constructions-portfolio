@@ -8,7 +8,7 @@ const Services = () => {
       <div className='flex flex-col gap-3 font-bold items-center'>
         <h1 className='text-3xl mt-10'>Services</h1>
         <h1 className='text-4xl mt-5 text-gray-200 text-center'>What do we offer?</h1>
-        <p className='md:w-1/2 text-center text-gray-400 mt-5'>We offer a wide range of services tailored to meet the diverse needs of our clients. Whether you're looking to build your dream home, renovate your office space, or undertake a large-scale commercial project, we have the skills and resources to bring your vision to life.</p>
+        <p className='md:w-1/2 text-center text-gray-400 mt-5'>We offer a wide range of services tailored to meet the diverse needs of our clients. Whether you&apos;re looking to build your dream home, renovate your office space, or undertake a large-scale commercial project, we have the skills and resources to bring your vision to life.</p>
       </div>
       <div className='flex flex-row gap-4 flex-wrap justify-center'>
         <div className='w-full md:w-3/12 bg-yellow-500 mr-5 shadow-xl p-10 my-3 md:my-10 flex flex-col items-center'>
@@ -33,7 +33,7 @@ const Services = () => {
         <div className='w-full md:w-3/12 bg-yellow-500 mr-5 shadow-xl p-10 my-3 md:my-10 flex flex-col items-center'>
           <ServicesIcon kind="renovation" size={10} />
           <h1 className='text-black font-medium text-2xl pt-4 text-center'>Renovation Projects</h1>
-          <p className='text-black font-semibold text-center mt-5'>Whether it's updating an existing space or transforming it into something entirely new we have the expertise to handle projects of any scale.</p>
+          <p className='text-black font-semibold text-center mt-5'>Whether it&apos;s updating an existing space or transforming it into something entirely new we have the expertise to handle projects of any scale.</p>
         </div>
 
         <div className='w-full md:w-3/12 bg-yellow-500 mr-5 shadow-xl p-10 my-3 md:my-10 flex flex-col items-center'>

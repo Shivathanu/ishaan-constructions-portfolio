@@ -11,7 +11,7 @@ export default function Page() {
         {/* Overlay */}
         <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
         <div className='p-5 text-white z-[2]'>
-          <span className="bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let's work together</span>
+          <span className="bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</span>
           <form className='max-w-[600px] mt-5 m-auto'>
               <div className='grid grid-cols-2 gap-2'>
                   <input className='border shadow-lg p-3' type="text" placeholder='Name' />

@@ -11,11 +11,9 @@ export default function AuthorLayout({ content }: Props) {
 
   return (
     <>
-      <div className="main-container padding-container pt-20 divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="main-container padding-container pt-10 divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-20 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            About
-          </h1>
+          <span className="bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">About</span>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
@@ -37,9 +35,9 @@ export default function AuthorLayout({ content }: Props) {
             </div>
           </div>
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
-            <p>Gopirajan is a civil engineer with an exctensive experience of 25 years. His experience mostly involves planning, coordinating and executing complex infrastructure projects at scale.</p>
-            <p>His most significant works involves the construction of a water treatment plant at Abu Dhabi, with the state-of-the-art infrastructure.</p>
-            <p>He has completed certification in civil work that showcases his broad range of skillsets he possess at his profile. His work showcased in this portfolio, proves a testament to his capabilities in his field of work</p>
+            <p>A strategic professional with 30 years of extensive experience in Project Planning & Management in the Construction sector. His experience mostly involves planning, coordinating and executing complex infrastructure projects at scale.</p>
+            <p>His most significant works involves the construction of a water treatment plant at Abu Dhabi, with the state-of-the-art infrastructure. Has Comprehensive experience in civil construction, undertaking operations related to Cost Estimation & Budgeting, Design Reviewing, Procurement & Material Management, Client Interaction and MEP Trade Estimation. He has completed certification in civil work that showcases his broad range of skillsets he possess at his profile. </p>
+            <p> His work showcased in this portfolio, proves a testament to his capabilities in his field of work.</p>
           </div>
         </div>
       </div>

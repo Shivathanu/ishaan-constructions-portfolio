@@ -3,6 +3,9 @@
 import Image from 'next/image'
 import Button from '@/components/Button'
 import { TypeAnimation } from 'react-type-animation';
+import { genPageMetadata } from './seo';
+
+export const metadata = genPageMetadata({ title: 'Home' })
 
 export default function Home() {
   return (

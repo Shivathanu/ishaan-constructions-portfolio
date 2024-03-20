@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <div className='max-container padding-container flex items-center justify-center h-screen pt-20 md:pt-24 pb-12 bg-fixed bg-center bg-cover hero-map'>
         <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/60 z-[2]'/>
-        <div className='relative z-[2] flex flex-1 flex-col xl:w-1/2 ml-10 pt-20 text-gray-200'>
+        <div className='relative z-[2] flex flex-1 flex-col xl:w-1/2 ml-10 mt-20 text-gray-200'>
           <Image 
             src="/static/images/camp.svg"
             alt="camp"

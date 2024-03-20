@@ -1,10 +1,78 @@
-import Button from '@/components/Button'
-import React from 'react'
-import { genPageMetadata } from 'app/seo'
+'use client'
 
-export const metadata = genPageMetadata({ title: 'Contact' })
+import Button from '@/components/Button'
+import React, { useState } from 'react'
+import emailjs, { send } from '@emailjs/browser'
 
 export default function Page() {
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState({ name: '', email: '', message: '', subject: '', success: '', error: ''});
+  const [emailError, setEmailError] = useState('');
+  
+  const sendEmail = () => {
+    try {
+      setIsLoading(true)
+      if (!data.email) {
+        setError('Email is required.');
+        throw new Error('Email is required.');
+      } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+        setError('Invalid email format.');
+        throw new Error('Invalid email format');
+      }
+
+      if (!data.name) {
+        setError('Name is required.');
+        throw new Error('Name is required.');
+      }
+
+      if (!data.subject) {
+        setError('Subject is required.');
+        throw new Error('Subject is required.');
+      }
+
+      if (!data.message) {
+        setError('Message is required.');
+        throw new Error('Message is required.');
+      }
+  
+      var templateParams = {
+        from_name: data.email,
+        to_name: 'Admin',
+        message: `${data.subject}::${data.message}`
+      };
+  
+      emailjs.init({
+        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLICKEY,
+      });
+  
+      emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICEID ?? '', 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID ?? '', 
+        templateParams
+      ).then(
+        function (response) {
+          setIsLoading(false)
+          setSuccess('Your message has been sent successfully. We will get back to you soon.')
+        },
+        function (err) {
+          console.log('FAILED...', err)
+          setIsLoading(false)
+          setError('Some error occured. Please send me a direct email found in the footer below.')
+        },
+      );
+    } catch {
+      console.log('Error in sending email!!!')
+    }
+  }
+
+  const handleChange = (data: any) => {
+    setSuccess('')
+    setError('')
+    setData({ ...data, success: '', error: ''})
+  }
+
   return (
     <>
       <div className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us pt-20 pb-10'>
@@ -13,21 +81,33 @@ export default function Page() {
         <div className='p-2 text-black z-[2]'>
           <span className="bold-40 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</span>
           <p className='text-gray-200'>Ready to bring your construction project to life? Contact Us today to discuss your vision and discover how we can help.</p>
-          <form className='max-w-[600px] mt-5 m-auto'>
+            <form className='max-w-[600px] pt-5 m-auto'>
               <div className='grid grid-cols-2 gap-2'>
-                  <input className='border shadow-lg p-3' type="text" placeholder='Your Name Here' />
-                  <input className='border shadow-lg p-3' type="email" placeholder='Email Address' />
+                <input className='border shadow-lg p-3' type="text" placeholder='Your Name Here' onChange={(e) => handleChange({ ...data, name: e.target.value })} required/>
+                <input className='border shadow-lg p-3' type="email" id="email" name="email" placeholder='Email Address' onChange={(e) => handleChange({ ...data, email: e.target.value })} required/>
+                {emailError && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{emailError}</div>}
               </div>
-              <input className='border shadow-lg p-3 w-full my-2' type="text" placeholder='How Can We Assist You?' />
-              <textarea className='border shadow-lg p-3 w-full' cols={30} rows={10} placeholder='Describe the services you require...'></textarea>
-              <div className='pt-2'>
-                <Button 
-                    type='button'
-                    title='Submit'
-                    variant='btn_transparent_yellow w-full'
-                />
-              </div>
-          </form>
+              <input className='border shadow-lg p-3 w-full my-2' type="text" placeholder='Subject: How Can We Assist You?' onChange={(e) => handleChange({ ...data, subject: e.target.value })}/>
+              <textarea 
+                className='border shadow-lg p-3 w-full' 
+                cols={30} 
+                rows={10}
+                placeholder='Message: Describe the services you require...'
+                onChange={(e) => handleChange({ ...data, message: e.target.value })}
+                required
+              >
+              </textarea>
+              {error && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{error}</div>}
+              {success && <div className='p-2 text-center text-green-600 dark:text-green-600 text-sm'>{success}</div>}
+              <div className='pt-2' />
+              <Button 
+                type='button'
+                title='Submit'
+                variant='btn_transparent_yellow w-full'
+                onClick={sendEmail}
+                isLoading={isLoading}
+              />
+            </form>
         </div>
       </div>
     </>

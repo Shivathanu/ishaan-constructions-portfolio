@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import 'css/tailwind.css'
+import emailjs from '@emailjs/browser'
 
 import { Space_Grotesk, Inter } from 'next/font/google'
 import Header from '@/components/Header'

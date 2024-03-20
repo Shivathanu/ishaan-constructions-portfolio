@@ -7,19 +7,20 @@ export const metadata = genPageMetadata({ title: 'Contact' })
 export default function Page() {
   return (
     <>
-      <div className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us'>
+      <div className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us pt-20 pb-10'>
         {/* Overlay */}
         <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
-        <div className='p-5 text-white z-[2]'>
-          <span className="bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</span>
+        <div className='p-2 text-black z-[2]'>
+          <span className="bold-40 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</span>
+          <p className='text-gray-200'>Ready to bring your construction project to life? Contact Us today to discuss your vision and discover how we can help.</p>
           <form className='max-w-[600px] mt-5 m-auto'>
               <div className='grid grid-cols-2 gap-2'>
-                  <input className='border shadow-lg p-3' type="text" placeholder='Name' />
-                  <input className='border shadow-lg p-3' type="email" placeholder='Email' />
+                  <input className='border shadow-lg p-3' type="text" placeholder='Your Name Here' />
+                  <input className='border shadow-lg p-3' type="email" placeholder='Email Address' />
               </div>
-              <input className='border shadow-lg p-3 w-full my-2' type="text" placeholder='Subject' />
-              <textarea className='border shadow-lg p-3 w-full' cols={30} rows={10} placeholder='Message'></textarea>
-              <div className='mt-4'>
+              <input className='border shadow-lg p-3 w-full my-2' type="text" placeholder='How Can We Assist You?' />
+              <textarea className='border shadow-lg p-3 w-full' cols={30} rows={10} placeholder='Describe the services you require...'></textarea>
+              <div className='pt-2'>
                 <Button 
                     type='button'
                     title='Submit'

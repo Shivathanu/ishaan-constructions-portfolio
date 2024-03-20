@@ -10,7 +10,7 @@ export default function Page() {
         name: 'Gopirajan',
         occupation: 'Civil Contractor',
         company: 'Ishaan Constructions',
-        email: 'sathi1967@gmail.com',
+        email: 'ishaanconstructions@gmail.com',
         linkedin: 'http://linkedin.com/in/sivagopi-rajan-18095956',
         title: 'About',
         description: 'About page',

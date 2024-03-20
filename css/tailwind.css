@@ -43,7 +43,7 @@ body {
     @apply border-gray-20 bg-green-90 px-8 py-5 text-white
   }
   
-  .max-container {
+  .max-container {  
     @apply mx-auto max-w-[1920px];
   }
 
@@ -142,7 +142,7 @@ body {
 
   /* Hero */
   .hero-map {
-    background-image: url('../public/static/images/construction-img.jpg')
+    background-image: url('../public/static/images/construction-img.webp')
   }
 
   .contact-us {

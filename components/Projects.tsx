@@ -21,8 +21,8 @@ const Projects = ({ slides }) => {
   }
 
   return (
-    <div id='gallery' className='max-w-[1240px] mx-auto'>
-      <h1 className='text-3xl font-bold text-center p-4'>Projects</h1>
+    <div id='gallery' className='max-container padding-container w-full bg-neutral-50 text-black py-20'>
+      <h1 className='text-3xl font-bold text-center p-4'>Our Projects</h1>
       <div className='relative flex justify-center p-4'>
 
       {SliderData.map((slide, index) => {
@@ -31,13 +31,13 @@ const Projects = ({ slides }) => {
             key={index}
             className={
               index === current
-                ? 'opacity-[1] ease-in duration-500'
+                ? 'opacity-[1] ease-in duration-100'
                 : 'opacity-0'
             }
           >
               <FaArrowCircleLeft
                 onClick={prevSlide}
-                className='absolute top-[50%] left-[30px] text-white/70 cursor-pointer select-none z-[2]'
+                className='absolute top-[50%] left-[30px] text-black/70 cursor-pointer select-none z-[2]'
                 size={50}
               />
               {index === current && (
@@ -50,13 +50,13 @@ const Projects = ({ slides }) => {
               )}
               <FaArrowCircleRight
                 onClick={nextSlide}
-                className='absolute top-[50%] right-[30px] text-white/70 cursor-pointer select-none z-[2]'
+                className='absolute top-[50%] right-[30px] text-black/70 cursor-pointer select-none z-[2]'
                 size={50}
               />
             </div>
         );
       })}
-    </div>
+      </div>
     </div>
   );
 };

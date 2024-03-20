@@ -1,24 +1,68 @@
-import Link from './Link'
-import siteMetadata from '@/data/siteMetadata'
-import SocialIcon from '@/components/social-icons'
+import { FOOTER_CONTACT_INFO, SOCIALS } from '../constants'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import SocialIcon from './social-icons'
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer>
-      <hr className="border-t border-gray-400"></hr>
-      <div className="mt-10 flex flex-col items-center">
-        <div className="mb-3 flex space-x-4">
-          <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
-          <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
+    <footer className="flexCenter bg-blue-900 text-gray-400 pt-20 mb-24">
+      <div className="padding-container max-container flex w-full flex-col gap-14">
+        <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
+          <Link href="/" className="mb-10">
+            <Image style={{ color: `white` }} src='/static/favicons/logo.png' alt='logo' width={74} height={30} />
+          </Link>
+
+          <div className='flex flex-wrap gap-10 sm:justify-between'>
+            <div className="flex flex-col flex-wrap gap-5">
+              <FooterColumn title={FOOTER_CONTACT_INFO.title}>
+                {FOOTER_CONTACT_INFO.links.map((link) => (
+                  <div
+                    key={link.label}
+                    className="flex gap-4 md:flex-col lg:flex-row"
+                  >
+                    <p className="whitespace-nowrap">
+                      {link.label}:
+                    </p>
+                    <p className="medium-18 whitespace-nowrap text-gray-300 pt-[1px]">
+                      {link.value}
+                    </p>
+                  </div>
+                ))}
+              </FooterColumn>
+            </div>
+
+            <div className="flex flex-col gap-5">
+              <FooterColumn title={SOCIALS.title}>
+                <ul className="regular-14 flex gap-4 text-gray-400">
+                  {SOCIALS.links.map((link: any, index) => (
+                    <SocialIcon key={index} kind={link.label} href={link.href} size={6} />
+                  ))}
+                </ul>
+              </FooterColumn>
+            </div>
+          </div>
         </div>
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400 pb-10">
-          <div>{siteMetadata.author}</div>
-          <div>{` • `}</div>
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>{` • `}</div>
-          <Link href="/">{siteMetadata.title}</Link>
-        </div>
+
+        <div className="border bg-black" />
+        <p className="regular-14 w-full text-center text-gray-30 mb-24">{`© ${new Date().getFullYear()}`} Ishaan Constructions | All rights reserved</p>
       </div>
     </footer>
   )
 }
+
+type FooterColumnProps = {
+  title: string;
+  children: React.ReactNode;
+}
+
+const FooterColumn = ({ title, children }: FooterColumnProps) => {
+  return (
+    <div className='flex flex-col gap-5'>
+      <h4 className='bold-18 whitespace-nowrap'>{title}</h4>
+      {children}
+    </div>
+  )
+}
+
+export default Footer

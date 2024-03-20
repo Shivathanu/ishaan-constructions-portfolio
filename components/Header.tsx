@@ -24,7 +24,7 @@ export default function Header() {
             setMenuColor('black');
           } else {
             setColor('transparent');
-            setTextColor('white');
+            setTextColor('gray-100');
             setLinkColor('yellow');
             setBtnColor('btn_transparent_yellow');
             setMenuColor('white');

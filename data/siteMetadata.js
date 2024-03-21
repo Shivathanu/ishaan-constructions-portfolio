@@ -5,7 +5,7 @@ const siteMetadata = {
   headerTitle: 'Ishaan Constructions',
   description: 'A portfolio for Ishaan Constructions',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://github.com/Shivathanu/ishaan-constructions-portfolio',
   siteRepo: 'https://github.com/Shivathanu/ishaan-constructions-portfolio',
   siteLogo: '/static/images/logo.png',

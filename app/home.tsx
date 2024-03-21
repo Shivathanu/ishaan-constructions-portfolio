@@ -10,7 +10,7 @@ export const metadata = genPageMetadata({ title: 'Home' })
 export default function Home() {
   return (
     <>
-      <div className='max-container padding-container flex items-center justify-center h-screen pt-20 md:pt-24 pb-12 bg-fixed bg-center bg-cover hero-map'>
+      <div className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover hero-map'>
         <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/60 z-[2]'/>
         <div className='relative z-[2] flex flex-1 flex-col xl:w-1/2 ml-10 mt-20 text-gray-200'>
           <Image 
@@ -39,7 +39,7 @@ export default function Home() {
             }}
             repeat={Infinity}
           />
-          <p className="regular-18 text-2xl mt-6 text-gray-400 xl:max-w-[520px]">
+          <p className="regular-18 text-2xl pt-6 text-gray-400 xl:max-w-[520px]">
             We&apos;re committed to joining you on each step of your construction journey, seeking the satisfaction of witnessing the timeless beauty of architectural craftsmanship. With our expertise, we can guide you through your construction project, transforming your vision into reality.
           </p>
 

@@ -6,13 +6,13 @@ const Services = () => {
   return (
     <div className='max-container padding-container mx-auto pb-10'>
       <div className='flex flex-col gap-3 font-bold items-center'>
-        <h1 className='text-3xl mt-10 text-gray-400 text-center'>A Comprehensive Set Of Services</h1>
-        <h1 className='text-4xl mt-5 text-gray-400 text-center'>What do we offer?</h1>
-        <p className='md:w-1/2 text-center text-gray-400 mt-5'>We offer a wide range of services tailored to meet the diverse needs of our clients. Whether you&apos;re looking to build your dream home, renovate your office space, or undertake a large-scale commercial project, we have the skills and resources to bring your vision to life.</p>
+        <h1 className='text-2xl lg:text-2xl mt-10 text-gray-400 text-center'>A Comprehensive Set Of Services</h1>
+        <h1 className='text-3xl lg:text-4xl text-gray-400 text-center'>What do we offer?</h1>
+        <p className='md:w-1/2 text-center text-gray-400 py-5'>We offer a wide range of services tailored to meet the diverse needs of our clients. Whether you&apos;re looking to build your dream home, renovate your office space, or undertake a large-scale commercial project, we have the skills and resources to bring your vision to life.</p>
       </div>
       <div className='flex flex-row gap-4 flex-wrap justify-center'>
 
-        <div className='w-full lg:w-4/12 bg-white mr-5 shadow-xl p-10 my-3 md:my-10 flex flex-col items-center'>
+        <div className='w-full lg:w-4/12 bg-yellow-500 shadow-xl p-10 md:my-10 flex flex-col items-center'>
           <ServicesIcon kind="architectureDesign" size={10} />
           <h1 className='text-black font-medium text-2xl pt-4 text-center'>Custom Home Construction</h1>
           <ul className='text-black font-semibold items-start mt-5 list-disc pl-5'>
@@ -21,7 +21,7 @@ const Services = () => {
           </ul>
         </div>
 
-        <div className='w-full lg:w-4/12 bg-yellow-500 mr-5 shadow-xl p-10 my-3 md:my-10 flex flex-col items-center'>
+        <div className='w-full lg:w-4/12 bg-yellow-500 shadow-xl p-10 md:my-10 flex flex-col items-center'>
           <ServicesIcon kind="buildingPlans" size={10} />
           <h1 className='text-black font-medium text-2xl pt-4 text-center'>Home Renovations and Additions</h1>
           <ul className='text-black font-semibold items-start mt-5 list-disc pl-5'>
@@ -30,7 +30,7 @@ const Services = () => {
           </ul>
         </div>
 
-        <div className='w-full lg:w-4/12 bg-orange-500 mr-5 shadow-xl p-10 my-3 md:my-10 flex flex-col items-center'>
+        <div className='w-full lg:w-4/12 bg-yellow-500 shadow-xl p-10 md:my-10 flex flex-col items-center'>
         <ServicesIcon kind="estimates" size={10} />
           <h1 className='text-black font-medium text-2xl pt-4 text-center'>Interior Remodeling</h1>
           <ul className='text-black font-semibold items-start mt-5 list-disc pl-5'>
@@ -39,7 +39,7 @@ const Services = () => {
           </ul>
         </div>
 
-        <div className='w-full lg:w-4/12 bg-lime-500 mr-5 shadow-xl p-10 my-3 md:my-10 flex flex-col items-center'>
+        <div className='w-full lg:w-4/12 bg-yellow-500 shadow-xl p-10 md:my-10 flex flex-col items-center'>
           <ServicesIcon kind="renovation" size={10} />
           <h1 className='text-black font-medium text-2xl pt-4 text-center'>Exterior Improvements</h1>
           <ul className='text-black font-semibold items-start mt-5 list-disc pl-5'>

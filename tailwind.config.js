@@ -20,6 +20,10 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
+      fontSize: {
+        'xs-se': '0.75rem', // Extra small text size for iPhone SE
+        'sm-se': '0.875rem', // Small text size for iPhone SE
+      },
       fontFamily: {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },

@@ -1,64 +1,53 @@
 'use client'
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React from 'react';
 import { SliderData } from '../data/sliderData';
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 const Projects = ({ slides }) => {
-  const [current, setCurrent] = useState(0);
-  const length = slides.length;
-
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
-  }
-
   return (
-    <div id='gallery' className='max-container padding-container w-full bg-neutral-50 text-black py-20'>
-      <h1 className='text-3xl font-bold text-center p-4'>Our Projects</h1>
-      <div className='relative flex justify-center p-4'>
-
-      {SliderData.map((slide, index) => {
-        return (
-          <div
-            key={index}
-            className={
-              index === current
-                ? 'opacity-[1] ease-in duration-100'
-                : 'opacity-0'
-            }
-          >
-              <FaArrowCircleLeft
-                onClick={prevSlide}
-                className='absolute top-[50%] left-[30px] text-black/70 cursor-pointer select-none z-[2]'
-                size={50}
-              />
-              {index === current && (
+    <section className='relative max-container padding-container bg-neutral-50 w-full mt-50 text-center'>
+      <h1 className='bold-32 md:bold-50 pt-10 md:pt-10 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-yellow-500'>Our Projects</h1>
+      <div className='py-2 md:py-10 flexCenter'>
+        <Swiper
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          pagination={{ type: 'fraction' }}
+          modules={[EffectCoverflow, Navigation, Pagination]}
+          onSwiper={swiper => console.log(swiper)}
+          className='h-96 w-full rounded-lg'
+        >
+          {SliderData.map((image, index) => (
+            <SwiperSlide key={index}>
+              <div className='flex h-full w-full items-center justify-center'>
                 <Image
-                  src={slide.image}
-                  alt='/'
-                  width='800'
-                  height='100'
+                  src={image.image}
+                  alt={`image_${index}`}
+                  className='block object-cover rounded-lg'
+                  width={800}
+                  height={100}
                 />
-              )}
-              <FaArrowCircleRight
-                onClick={nextSlide}
-                className='absolute top-[50%] right-[30px] text-black/70 cursor-pointer select-none z-[2]'
-                size={50}
-              />
-            </div>
-        );
-      })}
-      </div>
+              </div>
+            </SwiperSlide>
+          ))}
+
+          <FaArrowCircleLeft className="swiper-button-prev"/>
+          <FaArrowCircleRight className="swiper-button-next"/>
+        </Swiper>
     </div>
-  );
+    </section>
+  )
 };
 
 export default Projects;

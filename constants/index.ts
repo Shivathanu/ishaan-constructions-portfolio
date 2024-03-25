@@ -11,16 +11,16 @@ export const NAV_LINKS = [
   export const FOOTER_CONTACT_INFO = {
     title: 'Company Info',
     links: [
-      { label: 'Address', value: 'Ishaan Constructions Admin Office' },
+      { label: 'Address', value: 'No.21, 2nd Street, Singaram Nagar, Mannivakkam, Chennai-48' },
       { label: 'Phone', value: '+91-9003128155' },
       { label: 'Email', value: 'ishaanconstructions@gmail.com' },
     ],
   };
 
   export const SOCIALS = {
-    title: 'Social',
+    title: 'Contact',
     links: [
       { label: 'mail', href: `mailto:${siteMetadata.email}` },
-      { label: 'linkedin', href: siteMetadata.linkedin }
+      // { label: 'linkedin', href: siteMetadata.linkedin }
     ],
   };

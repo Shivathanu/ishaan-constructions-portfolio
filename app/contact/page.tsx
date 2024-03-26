@@ -76,43 +76,45 @@ export default function Page() {
 
   return (
     <>
-      <div className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us'>
+      <section className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us'>
         {/* Overlay */}
         <div className='absolute inset-0 top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
         <div className='text-black z-[2] pt-20'>
-          <p className="bold-40 md:bold-52 lg:bold-88 text-transparent text-center bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</p>
+          <p className="bold-20 md:bold-52 lg:bold-88 text-transparent text-center bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</p>
           <p className='bold-4 md:bold-20 text-gray-300 py-2 text-center'>Ready to bring your construction project to life?</p>
           <p className='bold-4 md:bold-20 text-gray-300 pb-10 text-center'>Contact us today to discuss your vision and discover how we can help.</p>
-            <form className='max-w-[600px] m-auto'>
-              <div className='grid grid-cols-2 gap-2'>
-                <input className='border shadow-lg p-3' type="text" placeholder='Your Name Here' onChange={(e) => handleChange({ ...data, name: e.target.value })} required/>
-                <input className='border shadow-lg p-3' type="email" id="email" name="email" placeholder='Email Address' onChange={(e) => handleChange({ ...data, email: e.target.value })} required/>
-                {emailError && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{emailError}</div>}
-              </div>
-              <input className='border shadow-lg p-3 w-full my-2' type="text" placeholder='Subject: How Can We Assist You?' onChange={(e) => handleChange({ ...data, subject: e.target.value })}/>
-              <textarea 
-                className='border shadow-lg p-3 w-full' 
-                cols={30} 
-                rows={10}
-                placeholder='Message: Describe the services you require...'
-                onChange={(e) => handleChange({ ...data, message: e.target.value })}
-                required
-              >
-              </textarea>
-              {error && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{error}</div>}
-              {success && <div className='p-2 text-center text-green-600 dark:text-green-600 text-sm'>{success}</div>}
-              <div className='py-5'>
-              <Button 
-                type='button'
-                title='Submit'
-                variant='btn_transparent_yellow w-full'
-                onClick={sendEmail}
-                isLoading={isLoading}
-              />
-              </div>
-            </form>
+            <div className='flex flex-wrap'>
+              <form className='max-w-xs md:max-w-[600px] m-auto'>
+                <div className='grid grid-cols-2 gap-2'>
+                  <input className='border shadow-lg p-3' type="text" placeholder='Your Name Here' onChange={(e) => handleChange({ ...data, name: e.target.value })} required/>
+                  <input className='border shadow-lg p-3' type="email" id="email" name="email" placeholder='Email Address' onChange={(e) => handleChange({ ...data, email: e.target.value })} required/>
+                  {emailError && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{emailError}</div>}
+                </div>
+                <input className='border shadow-lg p-3 w-full my-2' type="text" placeholder='Subject: How Can We Assist You?' onChange={(e) => handleChange({ ...data, subject: e.target.value })}/>
+                <textarea 
+                  className='border shadow-lg p-3 w-full' 
+                  cols={30} 
+                  rows={10}
+                  placeholder='Message: Describe the services you require...'
+                  onChange={(e) => handleChange({ ...data, message: e.target.value })}
+                  required
+                >
+                </textarea>
+                {error && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{error}</div>}
+                {success && <div className='p-2 text-center text-green-600 dark:text-green-600 text-sm'>{success}</div>}
+                <div className='py-5'>
+                <Button 
+                  type='button'
+                  title='Submit'
+                  variant='btn_transparent_yellow w-full'
+                  onClick={sendEmail}
+                  isLoading={isLoading}
+                />
+                </div>
+              </form>
+            </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

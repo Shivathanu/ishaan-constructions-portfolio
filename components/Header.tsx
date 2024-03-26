@@ -37,7 +37,7 @@ export default function Header() {
     <>
         <nav style={{ backgroundColor: `${color}` }} className='fixed left-0 top-0 w-full flexBetween max-container padding-container z-10 mx-25 py-2 ease-in duration-300'>
             <Link href='/'>
-                <Image style={{ color: `white` }} src='/static/favicons/logo.png' alt='logo' width={74} height={30} />
+                <Image src='/static/favicons/logo.png' alt='logo' width={100} height={100} />
             </Link>
             <ul className='hidden h-full gap-12 sm:flex'>
                 {headerNavLinks.map((link) => (

@@ -15,7 +15,7 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 const Projects = ({ slides }) => {
   return (
-    <section className='relative max-container padding-container bg-neutral-50 w-full mt-50 text-center'>
+    <section className='relative max-container padding-container bg-neutral-50 w-full pt-50 text-center'>
       <h1 className='bold-32 md:bold-50 pt-10 md:pt-10 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-yellow-500'>Our Projects</h1>
       <div className='py-2 md:py-10 flexCenter'>
         <Swiper

@@ -3,9 +3,9 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 const Values = () => {
     return (
-        <section className="py-16 bg-orange-400 text-gray-600">
+        <section className="py-16 bg-orange-400 text-black">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">
+            <h2 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-400">
                 Our Values
             </h2>
     
@@ -42,7 +42,7 @@ const Values = () => {
           <div>
             <div className='flex items-start pb-4'><p className="text-xl font-semibold inline-block">{title}</p></div>
 
-            <p className="text-gray-600">{description}</p>
+            <p className="text-black">{description}</p>
           </div>
         </div>
       );

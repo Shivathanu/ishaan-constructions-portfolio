@@ -9,8 +9,8 @@ const Footer = () => {
     <footer className="flexCenter bg-blue-900 text-gray-400 pt-20 mb-24">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
-          <Link href="/" className="mb-10">
-            <Image style={{ color: `white` }} src='/static/favicons/logo.png' alt='logo' width={74} height={30} />
+          <Link href="/" className="pb-10">
+            <Image style={{ color: `white` }} src='/static/favicons/logo.png' alt='logo' width={94} height={40} />
           </Link>
 
           <div className='flex flex-wrap gap-10 sm:justify-between'>

@@ -20,7 +20,7 @@ export default function Home() {
             height={50}
             className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
           />
-          <span className="bold-40 xs:bold:10 sm:bold-20 md:bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">From Vision to Reality</span>
+          <span className="bold-40 xs:bold:10 sm:bold-40 md:bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">From Vision to Reality</span>
           <TypeAnimation
             sequence={[
               'Crafting Spaces, Inspiring Futures',
@@ -33,13 +33,13 @@ export default function Home() {
             wrapper="span"
             speed={50}
             style={{
-              fontSize: '1.5em',
+              fontSize: '1.25em',
               display: 'inline-block',
               fontWeight: 'bold',
             }}
             repeat={Infinity}
           />
-          <p className="regular-18 xs:text-xl text-2xl pt-6 text-gray-400 xl:max-w-[520px]">
+          <p className="regular-16 xs:text-xl text-2xl pt-6 text-gray-400 xl:max-w-[520px]">
             We&apos;re committed to joining you on each step of your construction journey, seeking the satisfaction of witnessing the timeless beauty of architectural craftsmanship. With our expertise, we can guide you through your construction project, transforming your vision into reality.
           </p>
 

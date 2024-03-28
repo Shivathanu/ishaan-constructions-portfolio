@@ -6,8 +6,8 @@ const Services = () => {
   return (
     <section className='max-container padding-container mx-auto pb-10'>
       <div className='flex flex-col gap-3 font-bold items-center'>
-        <h1 className='text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r pt-10 from-yellow-600 to-gray-400 text-center'>What do we offer?</h1>
-        <p className='md:w-1/2 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-gray-400 py-5'>Whether you&apos;re looking to build your dream home, renovate your office space, or undertake a large-scale commercial project, we have the skills and resources to bring your vision to life.</p>
+        <h1 className='text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r pt-10 from-blue-400 to-pink-400 text-center'>What do we offer?</h1>
+        <p className='md:w-1/2 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400 py-5'>Whether you&apos;re looking to build your dream home, renovate your office space, or undertake a large-scale commercial project, we have the skills and resources to bring your vision to life.</p>
       </div>
       <div className='flex flex-row gap-4 flex-wrap justify-center'>
 

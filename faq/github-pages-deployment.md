@@ -23,7 +23,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Ishaan Constructions site to Pages
+name: Deploy Ishaan Infra site to Pages
 
 on:
   # Runs on pushes targeting the default branch

@@ -9,8 +9,8 @@ export default function Page() {
       <AuthorLayout content={{
         name: 'Gopirajan',
         occupation: 'Civil Contractor',
-        company: 'Ishaan Constructions',
-        email: 'ishaanconstructions@gmail.com',
+        company: 'Ishaan Infra',
+        email: 'ishaaninfras@gmail.com',
         linkedin: 'http://linkedin.com/in/sivagopi-rajan-18095956',
         title: 'About',
         description: 'About page',

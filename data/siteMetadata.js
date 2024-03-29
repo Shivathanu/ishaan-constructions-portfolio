@@ -1,17 +1,17 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Ishaan Constructions',
+  title: 'Ishaan Infra',
   author: 'Gopirajan',
-  headerTitle: 'Ishaan Constructions',
-  description: 'A portfolio for Ishaan Constructions',
+  headerTitle: 'Ishaan Infra',
+  description: 'A portfolio for Ishaan Infra',
   language: 'en-us',
   theme: 'dark', // system, dark or light
-  siteUrl: 'https://github.com/Shivathanu/ishaan-constructions-portfolio',
-  siteRepo: 'https://github.com/Shivathanu/ishaan-constructions-portfolio',
+  siteUrl: 'https://github.com/Shivathanu/ishaan-infra-portfolio',
+  siteRepo: 'https://github.com/Shivathanu/ishaan-infra-portfolio',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'ishaanconstructions@gmail.com',
+  email: 'ishaaninfras@gmail.com',
   github: 'https://github.com',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',

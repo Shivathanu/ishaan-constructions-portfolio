@@ -13,7 +13,7 @@ export const NAV_LINKS = [
     links: [
       { label: 'Address', value: 'No.21, 2nd Street, Singaram Nagar, Mannivakkam, Chennai-48' },
       { label: 'Phone', value: '+91-9003128155' },
-      { label: 'Email', value: 'ishaanconstructions@gmail.com' },
+      { label: 'Email', value: 'ishaaninfras@gmail.com' },
     ],
   };
 

@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Ishaan Infra',
+  title: 'Ishaan Infra Projects',
   author: 'Gopirajan',
-  headerTitle: 'Ishaan Infra',
-  description: 'A portfolio for Ishaan Infra',
+  headerTitle: 'Ishaan Infra Projects',
+  description: 'A portfolio for Ishaan Infra Projects',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://github.com/Shivathanu/ishaan-infra-portfolio',

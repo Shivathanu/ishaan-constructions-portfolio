@@ -29,12 +29,12 @@ export default function AuthorLayout({ content }: Props) {
             </div>
           </div> */}
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
-            <p>Ishaan Infra is a dynamic and dedicated small construction company specializing in delivering
+            <p>Ishaan Infra Projects is a dynamic and dedicated small construction company specializing in delivering
             personalized service and high-quality craftsmanship. With a focus on attention to detail and
             customer satisfaction, we take pride in turning our clients&#39; visions into reality.
             </p>
 
-            <p>At Ishaan Infra, our mission is to provide exceptional construction services tailored to the
+            <p>At Ishaan Infra Projects, our mission is to provide exceptional construction services tailored to the
             unique needs of each client. We strive to build lasting relationships based on trust, reliability, and
             superior workmanship.
             </p>

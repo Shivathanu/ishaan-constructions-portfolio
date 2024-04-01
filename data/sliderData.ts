@@ -1,5 +1,10 @@
 export const SliderData = [
   {
+    image: '/static/images/nungambakkam.jpg',
+    title: 'Nungambakkam, Chennai',
+    description: 'Project Cost: 1,05,00,000 Rs'
+  },
+  {
     image: '/static/images/triplicane.jpeg',
     title: 'Triplicane, Chennai',
     description: 'Project Cost: 84,00,000 Rs'
@@ -25,4 +30,3 @@ export const SliderData = [
     description: 'Project Cost: 49,00,000 Rs'
   }
 ];
-  

@@ -74,7 +74,7 @@ export default function Page() {
       <section className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us'>
         {/* Overlay */}
         <div className='absolute inset-0 top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
-        <div className='text-black z-[2] pt-20 md:pt-20'>
+        <div className='text-black z-[2] pt-10 md:pt-20'>
           <p className="bold-20 md:bold-52 lg:bold-80 text-transparent text-center bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</p>
           <p className='bold-4 md:bold-12 text-gray-300 py-2 text-center'>Ready to bring your construction project to life?</p>
           <p className='bold-4 md:bold-12 text-gray-300 pb-4 text-center'>Contact us today to discuss your vision and discover how we can help.</p>

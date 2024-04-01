@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
 
         <div className="border bg-black" />
-        <p className="regular-14 w-full text-center text-gray-30 mb-24">{`© ${new Date().getFullYear()}`} Ishaan Infra | All rights reserved</p>
+        <p className="regular-14 w-full text-center text-gray-30 mb-24">{`© ${new Date().getFullYear()}`} Ishaan Infra Projects | All rights reserved</p>
       </div>
     </footer>
   )

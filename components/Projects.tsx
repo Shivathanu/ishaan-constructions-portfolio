@@ -33,14 +33,14 @@ const Projects = ({ slides }) => {
             clickable: true,
           }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="w-full h-full rounded-xl"
+          className="w-full h-[38rem] rounded-xl"
         >
           {SliderData.map((image, index) => (
             <SwiperSlide key={index}>
                   <Image
                     src={image.image}
                     alt={`image_${index}`}
-                    className='block object-cover rounded-t-xl w-100 h-64 md:h-90'
+                    className='block object-cover h-[30rem] rounded-t-xl'
                     width={800}
                     height={800}
                   />

@@ -145,6 +145,10 @@ body {
     background-image: url('../public/static/images/construction-img.webp')
   }
 
+  .mobile-hero-map {
+    background-image: url('../public/static/images/mobile-construction-img.png')
+  }
+
   .contact-us {
     background-image: url('../public/static/images/contact-us-img.jpg')
   }

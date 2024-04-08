@@ -71,7 +71,7 @@ export default function Page() {
 
   return (
     <>
-      <section className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us'>
+      <section className='relative max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover contact-us'>
         {/* Overlay */}
         <div className='absolute inset-0 top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
         <div className='text-black z-[2] pt-10 md:pt-20'>

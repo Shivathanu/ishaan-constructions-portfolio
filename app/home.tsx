@@ -10,7 +10,7 @@ export const metadata = genPageMetadata({ title: 'Home' })
 export default function Home() {
   return (
     <>
-      <section className='max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover mobile-hero-map md:hero-map'>
+      <section className='relative max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover mobile-hero-map md:hero-map'>
         <div className='absolute inset-0 top-0 left-0 right-0 bottom-0 bg-black/60'/>
         <div className='relative z-[2] flex flex-1 flex-col xl:w-1/2 pl-[-10] pt-[-20] text-gray-200'>
           <Image 

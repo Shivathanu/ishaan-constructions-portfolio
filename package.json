@@ -6,11 +6,12 @@
   "author": "Shivathanu",
   "scripts": {
     "start": "next dev",
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "serve": "next start",
     "analyze": "next build",
-    "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts"
+    "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
@@ -31,6 +32,8 @@
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
     "@svgr/webpack": "^8.0.1",
     "@types/mdx": "^2.0.5",
     "@types/node": "20.11.25",
@@ -42,7 +45,7 @@
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "husky": "^8.0.0",
+    "husky": "^9.0.11",
     "lint-staged": "^13.0.0",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
@@ -64,6 +67,11 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
     ]
+  },
+  "engines": {
+    "node": ">=21.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
   },
   "packageManager": "yarn@1.22.21"
 }

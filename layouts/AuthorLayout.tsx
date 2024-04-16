@@ -13,12 +13,12 @@ export default function AuthorLayout({ content }: Props) {
           <span className="font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">About Us</span>
         </div>
         <div className="prose max-w-none pb-14 pt-8 dark:prose-invert xl:col-span-2">
-          <p>Ishaan Infra Projects is a dynamic and dedicated small construction company specializing in delivering
+          <p>Ishaan Civil Engineering Contractors is a dynamic and dedicated small construction company specializing in delivering
           personalized service and high-quality craftsmanship. With a focus on attention to detail and
           customer satisfaction, we take pride in turning our clients&#39; visions into reality.
           </p>
 
-          <p>At Ishaan Infra Projects, our mission is to provide exceptional construction services tailored to the
+          <p>At Ishaan Civil Engineering Contractors, our mission is to provide exceptional construction services tailored to the
           unique needs of each client. We strive to build lasting relationships based on trust, reliability, and
           superior workmanship.
           </p>

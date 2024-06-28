@@ -1,6 +1,7 @@
 'use client'
 
 import Button from '@/components/Button'
+import Rating from '@/components/Rating';
 import router from 'next/router';
 import React, { useState } from 'react'
 
@@ -9,9 +10,12 @@ export default function Page() {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState({ name: '', message: '', rating: 0, success: '', error: ''});
+
+  const [ratingValue, setRatingValue] = useState(undefined);
   
-  async function rateMessage() {
+  async function rateMessage(value) {
     try {
+      setRatingValue(value);
       setIsLoading(true)
 
       if (!data.name) {
@@ -23,16 +27,21 @@ export default function Page() {
         setError('Message is required.');
         throw new Error('Message is required.');
       }
+
+      console.log('Message Length:', data.message.length);
+
+      if (data.message.length > 1000) {
+        setError('Message should be less than 1000 characters long.');
+        throw new Error('Message should be less than 1000 characters long.');
+      }
   
       var messageParams = {
         name: data.name,
-        rating: data.rating,
+        rating: value,
         quote: data.message
       };
   
       // send post message to the route
-      console.log('Message Params: ', messageParams);
-
       const response = await fetch('/api/rate-us', {
         method: 'POST',
         body: JSON.stringify(messageParams),
@@ -45,18 +54,17 @@ export default function Page() {
         throw new Error('Something went wrong!' + response.status);
       }
 
-      console.log('Response: ', response);
-
       const responseData = await response.json();
-      console.log('Response Data: ', responseData);
       setIsLoading(false)
-      setSuccess('Thank you for your feedback !')
+      setSuccess('Thank you for your valuable feedback !')
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 2000);
 
       // redirect to home page
-      window.location.href = '/'
-    } catch {
+    } catch (error) {
       setIsLoading(false)
-      console.log('Error in providing feedback !!!')
+      console.log('Error in providing feedback !!!', error)
     }
   }
 
@@ -88,16 +96,15 @@ export default function Page() {
                   required
                 >
                 </textarea>
+                <div className='py-2 md:py-4'>
+                <Rating
+                  iconSize="l"
+                  showOutOf={true}
+                  enableUserInteraction={true}
+                  onClick={rateMessage}
+                />
                 {error && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{error}</div>}
                 {success && <div className='p-2 text-center text-green-600 dark:text-green-600 text-sm'>{success}</div>}
-                <div className='py-2 md:py-4'>
-                <Button 
-                  type='button'
-                  title='Submit'
-                  variant='btn_transparent_yellow w-full'
-                  onClick={rateMessage}
-                  isLoading={isLoading}
-                />
                 </div>
               </form>
             </div>

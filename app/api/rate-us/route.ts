@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import TestimonialSubmission from '@/data/testimonialSubmissions.json';
+
+export async function GET() {
+    return NextResponse.json({ data: TestimonialSubmission });
+}
 
 export async function POST(request) {
     const data = await request.json();

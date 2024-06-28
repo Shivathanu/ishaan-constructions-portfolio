@@ -10,17 +10,18 @@ export const metadata = genPageMetadata({ title: 'Home' })
 export default function Home() {
   return (
     <>
+      {/* Hero Section */}
       <section className='relative max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover mobile-hero-map md:hero-map'>
         <div className='absolute inset-0 top-0 left-0 right-0 bottom-0 bg-black/60'/>
         <div className='relative z-[2] flex flex-1 flex-col xl:w-1/2 pl-[-10] pt-[-20] text-gray-200'>
-          <Image 
+          <Image
             src="/static/images/camp.svg"
             alt="camp"
             width={50}
             height={50}
-            className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
+            className="pt-20 absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
           />
-          <span className="bold-40 xs:bold:10 sm:bold-40 md:bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">From Vision to Reality</span>
+          <span className="pt-20 bold-40 xs:bold:10 sm:bold-40 md:bold-52 lg:bold-88 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">From Vision to Reality</span>
           <TypeAnimation
             sequence={[
               'Crafting Spaces, Inspiring Futures',

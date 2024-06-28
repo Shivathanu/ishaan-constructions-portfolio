@@ -75,12 +75,12 @@ export default function Page() {
         {/* Overlay */}
         <div className='absolute inset-0 top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
         <div className='text-black z-[2] pt-10 md:pt-20'>
-          <p className="bold-20 md:bold-52 lg:bold-80 text-transparent text-center bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</p>
-          <p className='bold-4 md:bold-12 text-gray-300 py-2 text-center'>Ready to bring your construction project to life?</p>
+          <p className="bold-40 md:bold-52 lg:bold-80 text-transparent text-center bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Let&apos;s work together</p>
+          <p className='bold-4 md:bold-12 text-gray-300 py-4 text-center'>Ready to bring your construction project to life?</p>
           <p className='bold-4 md:bold-12 text-gray-300 pb-4 text-center'>Contact us today to discuss your vision and discover how we can help.</p>
             <div className='flex flex-wrap'>
-              <form className='max-w-xs md:max-w-[600px] m-auto'>
-                <div className='grid grid-cols-2 gap-2 py-2'>
+              <form className='max-w-xs md:max-w-[600px] m-auto w-full'>
+                <div className='grid grid-cols-2 gap-2 py-6'>
                   <input className='border shadow-lg p-3' type="text" placeholder='Your Name Here' onChange={(e) => handleChange({ ...data, name: e.target.value })} required/>
                   <input className='border shadow-lg p-3' type="email" id="email" name="email" placeholder='Email Address' onChange={(e) => handleChange({ ...data, email: e.target.value })} required/>
                   {emailError && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{emailError}</div>}
@@ -96,7 +96,7 @@ export default function Page() {
                 </textarea>
                 {error && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{error}</div>}
                 {success && <div className='p-2 text-center text-green-600 dark:text-green-600 text-sm'>{success}</div>}
-                <div className='py-0 md:py-2'>
+                <div className='py-2 md:py-4'>
                 <Button 
                   type='button'
                   title='Submit'

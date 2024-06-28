@@ -159,6 +159,10 @@ body {
   .contact-us {
     background-image: url('../public/static/images/contact-us-img.jpg')
   }
+
+  .rate-us {
+    background-image: url('../public/static/images/rate-us-img.jpg')
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

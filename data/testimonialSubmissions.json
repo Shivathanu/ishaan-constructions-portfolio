@@ -1,17 +1,17 @@
 [
-    {
-      "quote": "The ability to capture responses is a game-changer. If a user gets tired of the sign up and leaves, that data is still persisted. Additionally, it's great to select between formats.",
-      "name": "Jessie J",
-      "role": "Acme LTD"
-    },
-    {
-      "quote": "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
-      "name": "Nick V",
-      "role": "Malika Inc."
-    },
-    {
-      "quote": "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
-      "name": "Nick V",
-      "role": "Malika Inc."
-    }
+  {
+    "quote": "The ability to capture responses is a game-changer. If a user gets tired of the sign up and leaves, that data is still persisted. Additionally, it's great to select between formats.",
+    "name": "Jessie J",
+    "role": "Acme LTD"
+  },
+  {
+    "quote": "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
+    "name": "Nick V",
+    "role": "Malika Inc."
+  },
+  {
+    "quote": "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
+    "name": "Nick V",
+    "role": "Malika Inc."
+  }
 ]

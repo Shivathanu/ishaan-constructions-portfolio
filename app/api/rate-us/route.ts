@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 
 export async function GET(request: NextRequest) {
+  try {
     const searchParams = request.nextUrl.searchParams
 
     if (searchParams.has('id')) {
@@ -14,6 +15,11 @@ export async function GET(request: NextRequest) {
     const { rows } = await sql`SELECT * from feedback;`;
     
     return NextResponse.json({ data: rows });
+  } catch (error) {
+    console.error('Error reading file:', error);
+
+    return NextResponse.json({ error: 'An error occurred', message: error.message, stack: error.stack });
+  }
 }
 
 export async function POST(request) {

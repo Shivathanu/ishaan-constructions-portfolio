@@ -4,17 +4,17 @@ import Home from './home'
 import Services from './services'
 import Values from './values'
 import Testimonials from '@/components/TestimonialSlider'
-import testimonials from '@/data/testimonialSubmissions.json'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
+import { getTestimonials } from 'app/actions';
 
-export default async function Page() {
+export default async function Page(props) {
   return (
     <>
       <Home/>
       <Projects slides={SliderData} />
       <Values />
       <Services />
-      <Testimonials testimonials={testimonials} />
+      <Testimonials getTestimonials={getTestimonials} />
       <ScrollToTopButton />
     </>
   )

@@ -1,18 +1,20 @@
 'use client'
 
-import { StaticImageData } from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
-import TestimonialSubmissions from '@/data/testimonialSubmissions.json'
+import { getTestimonials } from 'app/actions'
+import { useState } from 'react'
+import useSWR from 'swr'
 
-interface Testimonial {
-    img: StaticImageData
-    quote: string
-    name: string
-    role: string
-}
+export default function Testimonials({ getTestimonials }) {
+    const [testimonials, setTestimonials] = useState([])
 
-export default function Testimonials({ testimonials }: { testimonials: any }) {
+    useSWR('testimonials', getTestimonials, {
+        onSuccess: (data) => {
+            setTestimonials(data)
+        },
+    })
+
     return (
         <section className="relative max-container padding-container py-16 border border-gray-200 shadow-sm dark:border-gray-700 md:grid-cols-2 bg-white dark:bg-gray-800">
             <div className="container mx-auto px-4">
@@ -30,8 +32,8 @@ export default function Testimonials({ testimonials }: { testimonials: any }) {
                         autoplay={{
                             delay: 3500,
                             disableOnInteraction: false,
-                          }}
-                          
+                        }}
+
                         modules={[Autoplay, Pagination, Navigation]}
                         breakpoints={{
                             576: {
@@ -45,7 +47,7 @@ export default function Testimonials({ testimonials }: { testimonials: any }) {
                         }}
                         className="w-full h-[30rem] rounded-xl"
                     >
-                        {TestimonialSubmissions.map((data: any, index) => (
+                        {testimonials.map((data: any, index) => (
                             <SwiperSlide key={index}>
                                 <div className="flex flex-col flex-wrap justify-center items-center">
                                     <div className="w-full shrink-0 grow-0 basis-auto px-3 lg:w-10/12">

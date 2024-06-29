@@ -13,7 +13,6 @@ function getNextId(data) {
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams
-    console.log('TestimonialSubmission:', searchParams);
 
     if (searchParams.has('id')) {
         const id = searchParams.get('id') || 0;
@@ -35,22 +34,17 @@ export async function GET(request: NextRequest) {
           console.error('Error parsing JSON data:', parseErr);
           return;
         }
-      
-        console.log('JSON data to delete:', jsonData);
 
         // Step 3: Delete the value
         const keyToDelete = id;  // Replace with the key you want to delete
         const parsedData = jsonData.filter(item => +item.id !== +keyToDelete);
       
-
-        console.log('JSON data after delete:', parsedData);
         // Step 4: Write the updated JSON back to the file
         fs.writeFile(filePath, JSON.stringify(parsedData, null, 2), 'utf8', (writeErr) => {
           if (writeErr) {
             console.error('Error writing the file:', writeErr);
             return;
           }
-          console.log('JSON value deleted and file updated successfully');
         });
       });
         
@@ -80,7 +74,6 @@ export async function POST(request) {
                 console.error('Error writing the file:', writeErr);
                 return;
                 }
-                console.log('JSON value updated and file saved successfully');
             });
         } catch (error) {
             console.error('Error updating  this file:', error);

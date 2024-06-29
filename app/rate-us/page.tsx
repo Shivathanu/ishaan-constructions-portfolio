@@ -37,8 +37,6 @@ export default function Page() {
         throw new Error('Please rate our services.');
       }
 
-      console.log('Message Length:', data.message.length);
-
       if (data.message.length > 400) {
         setError('Message should be less than 1000 characters long.');
         throw new Error('Message should be less than 1000 characters long.');
@@ -64,7 +62,7 @@ export default function Page() {
       }
 
       const responseData = await response.json();
-      console.log('Response Data:', responseData);
+      // console.log('Response Data:', responseData);
       setIsLoading(false)
       setSuccess('Thank you for your valuable feedback !')
       setTimeout(() => {
@@ -78,11 +76,15 @@ export default function Page() {
       emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICEID ?? '', 
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID ?? '', 
-        messageParams
+        {
+          from_name: data.name,
+          to_name: 'Admin',
+          message: `${data.message} | rating: ${ratingValue}`
+        }
       ).then(
         function (response) {
           setIsLoading(false)
-          setSuccess('Your message has been sent successfully. We will get back to you soon.')
+          setSuccess('Thank you for your valuable feedback !')
         },
         function (err) {
           console.log('FAILED...', err)
@@ -109,8 +111,8 @@ export default function Page() {
       <section className='relative max-container padding-container flex items-center justify-center h-screen bg-fixed bg-center bg-cover rate-us'>
         {/* Overlay */}
         <div className='absolute inset-0 top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
-        <div className='text-black z-[2] pt-10 md:pt-20'>
-          <p className="bold-40 md:bold-52 lg:bold-80 text-transparent text-center bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Tell Us What You Think</p>
+        <div className='text-black z-[2] pt-10 md:pt-20 sm:pt-30'>
+          <p className="bold-20 xs:bold:10 sm:bold-20 md:bold-52 lg:bold-80 text-transparent text-center bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">Tell Us What You Think</p>
           <p className='bold-4 md:bold-12 text-gray-300 py-4 text-center'>Your Opinion Matters. Help Us Improve.</p>
             <div className='flex flex-wrap'>
               <form className='max-w-xs md:max-w-[600px] m-auto w-full'>
@@ -135,6 +137,7 @@ export default function Page() {
                     showOutOf={true}
                     enableUserInteraction={true}
                     onClick={handleRatingChange}
+                    ratingInPercent={100}
                   />
                   </div>
                 </div>

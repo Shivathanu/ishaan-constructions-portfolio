@@ -146,12 +146,4 @@ Rating.propTypes = {
   onClick: func
 };
 
-Rating.defaultProps = {
-  ratingInPercent: 50,
-  iconSize: SIZES.LARGE.key,
-  onClick: () => null,
-  showOutOf: false,
-  enableUserInteraction: false
-};
-
 export default Rating;

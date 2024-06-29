@@ -4,6 +4,7 @@ import Button from '@/components/Button'
 import Rating from '@/components/Rating';
 import router from 'next/router';
 import React, { useState } from 'react'
+import emailjs, { send } from '@emailjs/browser'
 
 export default function Page() {
   const [success, setSuccess] = useState('');
@@ -12,32 +13,40 @@ export default function Page() {
   const [data, setData] = useState({ name: '', message: '', rating: 0, success: '', error: ''});
 
   const [ratingValue, setRatingValue] = useState(undefined);
+
+  const handleRatingChange = (value) => {
+    setRatingValue(value);
+  }
   
-  async function rateMessage(value) {
+  async function rateMessage() {
     try {
-      setRatingValue(value);
       setIsLoading(true)
 
       if (!data.name) {
-        setError('Name is required.');
+        setError('Name, please!');
         throw new Error('Name is required.');
       }
 
       if (!data.message) {
-        setError('Message is required.');
+        setError('No feedback, no fun! Tell us what you think.');
         throw new Error('Message is required.');
+      }
+
+      if (!ratingValue) {
+        setError('Please take a moment to rate our services and help us serve you better.');
+        throw new Error('Please rate our services.');
       }
 
       console.log('Message Length:', data.message.length);
 
-      if (data.message.length > 1000) {
+      if (data.message.length > 400) {
         setError('Message should be less than 1000 characters long.');
         throw new Error('Message should be less than 1000 characters long.');
       }
   
       var messageParams = {
         name: data.name,
-        rating: value,
+        rating: ratingValue,
         quote: data.message
       };
   
@@ -55,11 +64,32 @@ export default function Page() {
       }
 
       const responseData = await response.json();
+      console.log('Response Data:', responseData);
       setIsLoading(false)
       setSuccess('Thank you for your valuable feedback !')
       setTimeout(() => {
         window.location.href = '/'
       }, 2000);
+
+      emailjs.init({
+        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLICKEY,
+      });
+  
+      emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICEID ?? '', 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID ?? '', 
+        messageParams
+      ).then(
+        function (response) {
+          setIsLoading(false)
+          setSuccess('Your message has been sent successfully. We will get back to you soon.')
+        },
+        function (err) {
+          console.log('FAILED...', err)
+          setIsLoading(false)
+          setError('Some error occured. Please send me a direct email found in the footer below.')
+        },
+      );
 
       // redirect to home page
     } catch (error) {
@@ -97,11 +127,24 @@ export default function Page() {
                 >
                 </textarea>
                 <div className='py-2 md:py-4'>
-                <Rating
-                  iconSize="l"
-                  showOutOf={true}
-                  enableUserInteraction={true}
+                <div className='flex flex-row'>
+                  <span className='font-white text-yellow-50 pt-1'>Rate our services: </span>
+                  <div className='pt-0 pl-3'>
+                  <Rating
+                    iconSize="l"
+                    showOutOf={true}
+                    enableUserInteraction={true}
+                    onClick={handleRatingChange}
+                  />
+                  </div>
+                </div>
+                <div className='py-2 md:py-4' />
+                <Button 
+                  type='button'
+                  title='Submit'
+                  variant='btn_transparent_yellow w-full'
                   onClick={rateMessage}
+                  isLoading={isLoading}
                 />
                 {error && <div className='p-2 text-center text-red-600 dark:text-red-600 text-sm'>{error}</div>}
                 {success && <div className='p-2 text-center text-green-600 dark:text-green-600 text-sm'>{success}</div>}
